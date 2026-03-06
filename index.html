@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Randomized Order</title>
+  <link rel="icon" href="InnovationAcademyPhoenix.png">
+  <style>
+    p
+    {
+    color: #dfebec;
+    }
+    h1
+    {
+    color: #dfebec;
+    }
+    h2
+    {
+    color: #dfebec;
+    }
+    h3
+    {
+    color: #dfebec;
+    }
+    body
+    {
+    text-align: center;
+    background-color: #000000;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      border: 1px solid #636363;
+      padding: 12px;
+      border-radius: 8px;
+      background: #363636;
+    }
+  </style>
+</head>
+<body>
+  <h1>INNOVATION ACADEMY IT PROGECT SHOWCASE</h1>
+  <p><img src="InnovationAcademyBannerLogo.png" width="350"></p>
+  <h2>THIS MONTH'S CANDIDATES</h2>
+  <div id="grid" class="grid" aria-live="polite">
+    <div class="card">
+        <h2><a href=youtube.com>Project 1 - Person 1</a></h2>
+            <iframe width="355" height="199" src="https://www.youtube.com/embed/KitxeFuqOro?si=FKl7oIEoM16_sfKy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="card">Card B</div>
+    <div class="card">Card C</div>
+    <div class="card">Card D</div>
+    <div class="card">Card E</div>
+    </div>
+    <hr>
+    <h2>Last Month's Winner</h2>
+    <iframe width="710" height="398" src="https://www.youtube.com/embed/KitxeFuqOro?si=FKl7oIEoM16_sfKy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <hr>
+    <p>
+    <h3><a href=https://www.youtube.com>Voting Link</a></h3>
+    <h3><a href=https://www.youtube.com>Submission Link For next Month</a></h3>
+    <h3>Contact ethan.wuerslin@gmail.com for support</h3>
+    </p>
+
+    <script>
+    // Fisher–Yates shuffle (unbiased)
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function shuffleChildren(container) {
+      const children = Array.from(container.children);
+      shuffle(children).forEach(el => container.appendChild(el));
+    }
+
+    // Randomize once after DOM is ready
+    window.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('grid');
+      shuffleChildren(grid);
+    });
+  </script>
+</body>
+</html>
