@@ -1,0 +1,27 @@
+h1, h2, h3, p {
+    color: #dfebec;
+}
+
+body {
+    text-align: center;
+    background-color: #000000;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 12px;
+}
+
+.card {
+    border: 1px solid #636363;
+    padding: 12px;
+    border-radius: 8px;
+    background: #363636;
+    max-width: 40%;
+    max-height: 40%;
+}
+
+.img {
+    width: 300px;
+}
